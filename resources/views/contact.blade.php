@@ -28,11 +28,12 @@
                         <h2 class="contact-title">Get in Touch</h2>
                     </div>
                     <div class="col-lg-8">
-                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="form-contact contact_form" id="ContactForm" action="{{ route('request_mail') }}">
+                            @csrf()
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 mb-5">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                                        <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="5" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -47,12 +48,13 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control" name="mobile" id="mobile" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Mobile Number'" placeholder="Enter Mobile Number">
                                     </div>
                                 </div>
                             </div>
+                            <input name="token" id="token" value="message" type="hidden">
                             <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                                <button type="submit" class="button button-contactForm boxed-btn"><i class="fa fa-circle-o-notch fa-spin hidden mr-2 fa-spin-visit"></i>Send</button>
                             </div>
                         </form>
                     </div>
@@ -76,7 +78,7 @@
                             <span class="contact-info__icon"><i class="ti-email"></i></span>
                             <div class="media-body">
                                 <h3>{{__('welcome.email')}}</h3>
-                                <p>aazadfoundation@gmail.com</p>
+                                <p>azadfoundation2022@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -101,12 +103,6 @@
         </div>
     </section>
     <!-- Want To work End -->
-    <!--? Testimonial Start -->
-   
-    <!-- Testimonial End -->
-    <!--? Blog Area Start -->
-    
-    <!-- Blog Area End -->
     <!--? Count Down Start -->
     <div class="count-down-area pt-25 section-bg" data-background="{{ url('public/assets/img/gallery/section_bg02.png') }}">
         <div class="container">
@@ -154,4 +150,72 @@
     </div>
     <!-- Count Down End -->
     </main>
+@endsection
+@section('jspage')
+<script>
+    $(document).ready(function() {
+        $("#ContactForm").validate({
+            rules: {
+                name: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                mobile: {
+                    required: true,
+                    digits: true,
+                    maxlength: 10,
+                    minlength: 10
+                },
+                comment: {
+                    required: true
+                },
+            },
+            messages: {
+                name: {
+                    required: 'Enter name',
+                },
+                email: {
+                    required: 'Enter email'
+                },
+                mobile: {
+                    required: 'Enter Mobile',
+                    digits: 'Enter valid mobile'
+                },
+                comment: {
+                    required: "Please enter message we would like to hear from you"
+                },
+            },
+            submitHandler: function(form, e) {
+                $('.fa-spin-contact').removeClass('hidden');
+                e.preventDefault();
+                var form = $(form);
+                var actionUrl = form.attr('action');
+
+                $.ajax({
+                    type: "POST",
+                    url: actionUrl,
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function(data) {
+                        $('.fa-spin-contact').addClass('hidden');
+                        if (data.flag == 'success') {
+                            toastr.success(data.msg);
+                            document.getElementById("ContactForm").reset();
+                        } else if (data.flag == 'error') {
+                            toastr.success(data.msg);
+                        }
+                    }
+                });
+            }
+        });
+
+        // $("#callback").submit(function(e) {
+        //     e.preventDefault();
+
+
+        // });
+    });
+</script>
 @endsection

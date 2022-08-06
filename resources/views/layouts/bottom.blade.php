@@ -22,7 +22,7 @@
 <script src="{{ url('public/assets/js/jquery.magnific-popup.js') }}"></script>
 
 <!-- Date Picker -->
-<script src="{{ url('public/assets/js/gijgo.min.js') }}"></script>
+<!-- <script src="{{ url('public/assets/js/gijgo.min.js') }}"></script> -->
 <!-- Nice-select, sticky -->
 <script src="{{ url('public/assets/js/jquery.nice-select.min.js') }}"></script>
 <script src="{{ url('public/assets/js/jquery.sticky.js') }}"></script>
@@ -87,8 +87,9 @@
                 $.ajax({
                     type: "POST",
                     url: actionUrl,
-                    data: form.serialize(), // serializes the form's elements.
+                    data: form.serialize(), 
                     success: function(data) {
+                        
                         $('.fa-spin-call').addClass('hidden');
                         if (data.flag == 'success') {
                             toastr.success(data.msg);

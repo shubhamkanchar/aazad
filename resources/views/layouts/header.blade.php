@@ -21,7 +21,7 @@
                                 <div class="header-info-left d-flex">
                                     <ul>     
                                         <li>{{__('welcome.phone')}}: {{ __('welcome.phone1') }} , {{__('welcome.phone2')}}</li>
-                                        <li>{{__('welcome.email')}}: aazadfoundation@gmail.com</li>
+                                        <li>{{__('welcome.email')}}: azadfoundation2022@gmail.com</li>
                                     </ul>
                                     <div class="header-social">    
                                         <ul>
@@ -68,8 +68,17 @@
                                             <ul id="navigation">                                                                                          
                                                 <li><a href="{{ route('welcome') }}">{{__('welcome.home')}}</a></li>
                                                 <li><a href="{{ route('about') }}">{{__('welcome.about')}}</a></li>
-                                                <!-- <li><a href="{{ route('works') }}">{{__('welcome.latest_works')}}</a></li>
-                                                <li><a href="{{ route('event') }}">{{__('welcome.social_event')}}</a></li> -->
+                                                @php
+                                                $works = App\Models\donation::count();
+                                                $event = App\Models\event::count();
+                                                $gallery = App\Models\gallery::count();
+                                                @endphp
+                                                @if($works > 0)
+                                                <li><a href="{{ route('works') }}">{{__('welcome.latest_works')}}</a></li>
+                                                @endif 
+                                                @if($event > 0)
+                                                <li><a href="{{ route('event') }}">{{__('welcome.social_event')}}</a></li>
+                                                @endif
                                                 <!-- <li><a href="blog.html">Blog</a>
                                                     <ul class="submenu">
                                                         <li><a href="blog.html">Blog</a></li>
@@ -77,7 +86,9 @@
                                                         <li><a href="elements.html">Element</a></li>
                                                     </ul>
                                                 </li> -->
-                                                <!-- <li><a href="{{ route('gallery') }}">{{__('welcome.gallery')}}</a></li> -->
+                                                @if($gallery > 0)
+                                                <li><a href="{{ route('gallery') }}">{{__('welcome.gallery')}}</a></li>
+                                                @endif
                                                 <li><a href="{{ route('contact') }}">{{__('welcome.contact')}}</a></li>
                                             </ul>
                                         </nav>

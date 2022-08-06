@@ -66,6 +66,13 @@ return [
     'member1'=>'Mr. Bhimashankar Kapse',
     'designation1'=>'President of Azad Group Maharashtra',
     'member2'=>'Mr. Pramod Tale',
-    'designation2'=>'Vice President Azad Group Maharashtra'
+    'designation2'=>'Vice President Azad Group Maharashtra',
+
+    'donation_small'=>'Our works You Can See',
+    'donation_large'=>'Explore Our Latest Causes That We Works',
+
+    'event_small'=>'What We Are Doing',
+    'event_large'=>'We Arrange Many Social Events For  Donations',
+
 ];
 ?>

@@ -25,7 +25,7 @@
                                             <p>{{__('welcome.address')}} :{{__('welcome.line1')}}, {{__('welcome.line2')}}.</p>
                                         </li>
                                         <li><a href="#">{{__('welcome.phone')}} : {{__('welcome.phone1')}}</a></li>
-                                        <li><a href="#">{{__('welcome.email')}} : aazadfoundation@gmail.com</a></li>
+                                        <li><a href="#">{{__('welcome.email')}} : azadfoundation2022@gmail.com</a></li>
                                     </ul>
                                 </div>
 

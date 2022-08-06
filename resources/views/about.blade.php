@@ -54,7 +54,7 @@
     <!-- About Law End-->
     
     <!--? Team Ara Start -->
-    <div class="team-area pt-160 pb-160">
+    <div class="team-area pb-100">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4">
-                        <a href="#" class="btn white-btn f-right sm-left">{{ __('welcome.appeal_button') }}</a>
+                        <a href="{{ route('register') }}" class="btn white-btn f-right sm-left">{{ __('welcome.appeal_button') }}</a>
                     </div>
                 </div>
             </div>

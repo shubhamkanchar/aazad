@@ -50,4 +50,10 @@
         z-index: 1;
         height: 400px;
     }
+    .about-low-area .about-img .about-font-img {
+    position: absolute;
+    z-index: 1;
+    left: 80px;
+    top: 45%;
+}
 </style>

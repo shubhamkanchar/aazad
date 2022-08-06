@@ -205,10 +205,10 @@ testimonial.slick({
     });
 
 /* 14. Datepicker */
-  $('#datepicker1').datepicker();
+  // $('#datepicker1').datepicker();
 
 // 15. Time Picker
-  $('#timepicker').timepicker();
+  // $('#timepicker').timepicker();
 
 //16. Overlay
   $(".snake").snakeify({

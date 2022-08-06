@@ -19,6 +19,8 @@ class language
     {
         if(session()->has('lang_code')){
             App::setLocale(session()->get('lang_code'));
+        }else{
+            session()->put('lang_code','en');
         }
         return $next($request);
     }
