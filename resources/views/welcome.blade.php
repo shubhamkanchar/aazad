@@ -51,7 +51,7 @@
     </div>
     <!-- slider Area End-->
     <!--? Services Area Start -->
-    <div class="service-area section-padding30">
+    <div class="service-area section-padding2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
@@ -178,7 +178,7 @@
     </div>
     <!-- Services Area End -->
     <!--? About Law Start-->
-    <section class="about-low-area section-padding2">
+    <section class="about-low-area section-padding1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-10">
@@ -209,173 +209,109 @@
     </section>
     <!-- About Law End-->
     <!-- Our Cases Start -->
-    <div class="our-cases-area section-padding30">
+    @php
+        $works = App\Models\donation::orderBy('created_at','desc')->limit(3)->get();
+    @endphp
+    @if($works)
+    <div class="our-cases-area section-padding2">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-80">
-                        <span>Our Cases you can see</span>
-                        <h2>Explore our latest causes that we works </h2>
+                        <span>{{ __('welcome.donation_small') }}</span>
+                        <h2>{{ __('welcome.donation_large') }}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
+                @foreach($works as $work)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="{{ url('public/assets/img/gallery/case1.png') }}" alt="">
+                        <div class="cases-img" style="width: 100%;height: 250px;">
+                            <img src="{{ url('public/uploads/donation').'/'.$work->file }}" alt="">
                         </div>
-                        <div class="cases-caption">
-                            <h3><a href="#">Ensure Education For Every Poor Children</a></h3>
+                        <div class="cases-caption" >
+                            <h3><a href="{{ route('works') }}">{{ $work->name }}</a></h3>
                             <!-- Progress Bar -->
+                            @php
+                            $percentage=(20000/$work->goal)*100;
+                            @endphp
                             <div class="single-skill mb-15">
                                 <div class="bar-progress">
                                     <div id="bar1" class="barfiller">
                                         <div class="tipWrap">
                                             <span class="tip"></span>
                                         </div>
-                                        <span class="fill" data-percentage="70"></span>
+                                        <span class="fill" data-percentage="{{ $percentage }}"></span>
                                     </div>
                                 </div>
                             </div>
                             <!-- / progress -->
+                            
                             <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> $35,000</span></p>
+                                <p>Raised:<span> ₹20,000</span></p>
+                                <p>Goal:<span> ₹{{ $work->goal }}</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="{{ url('public/assets/img/gallery/case2.png') }}" alt="">
-                        </div>
-                        <div class="cases-caption">
-                            <h3><a href="#">Providing Healthy Food For The Children</a></h3>
-                            <!-- Progress Bar -->
-                            <div class="single-skill mb-15">
-                                <div class="bar-progress">
-                                    <div id="bar2" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="25"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- / progress -->
-                            <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> $35,000</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cases mb-40">
-                        <div class="cases-img">
-                            <img src="{{ url('public/assets/img/gallery/case3.png') }}" alt="">
-                        </div>
-                        <div class="cases-caption">
-                            <h3><a href="#">Supply Drinking Water For  The People</a></h3>
-                            <!-- Progress Bar -->
-                            <div class="single-skill mb-15">
-                                <div class="bar-progress">
-                                    <div id="bar3" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="50"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- / progress -->
-                            <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> $20,000</span></p>
-                                <p>Goal:<span> $35,000</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+            </div>
+            <div class="row justify-content-center">
+                <a stye="color:white" href="{{ route('works') }}" class="btn btn-primary" >All</a>
             </div>
         </div>
     </div>
+    @endif
     <!-- Our Cases End -->
-    <!-- Featured_job_start -->
-    <section class="featured-job-area section-padding30 section-bg2" data-background="{{ url('public/assets/img/gallery/section_bg03.png') }}">
+    <!-- Featured_job_start --> 
+    @php
+        $event = App\Models\event::orderBy('created_at','desc')->limit(3)->get();
+    @endphp
+    @if($event)
+    <section class="featured-job-area section-padding1 section-bg2" data-background="{{ url('public/assets/img/gallery/section_bg03.png') }}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-80">
-                        <span>What we are boing</span>
-                        <h2>We arrange many social events for charity donations</h2>
+                        <span>{{ __('welcome.event_small') }}</span>
+                        <h2>{{ __('welcome.event_large') }}</h2>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
+                @foreach($event as $e)
                 <div class="col-lg-9 col-md-12">
                     <!-- single-job-content -->
                     <div class="single-job-items mb-30">
                         <div class="job-items">
                             <div class="company-img">
-                                <a href="#"><img src="{{ url('public/assets/img/gallery/socialEvents1.png') }}" alt=""></a>
+                                <a href="{{ $e->link }}" target="_blank"><img style="width:175px;height: 175px;" src="{{ url('public/uploads/event').'/'.$e->file }}" alt=""></a>
                             </div>
-                            <div class="job-tittle">
-                                <a href="#"><h4>Donation is Hope</h4></a>
+                            <div class="job-tittle" style="color:black">
+                                <a target="_blank" href="{{ $e->link }}"><h4>{{ $e->name }}</h4></a>
                                 <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-sort-amount-down"></i>18.01.2021</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
+                                    <li style="color:black"><i class="far fa-clock"></i>{{ $e->from }} - {{ $e->to}}</li>
+                                    <li style="color:black"><i class="fas fa-sort-amount-down"></i>{{ $e->date }}</li>
+                                    <li><a target="_blank" style="color:black" href="{{ $e->link }}"><i class="fas fa-map-marker-alt"></i>{{ $e->location }}</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="#"><img src="{{ url('public/assets/img/gallery/socialEvents2.png') }}" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="#"><h4>A hand for Children</h4></a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-sort-amount-down"></i>18.01.2021</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="#"><img src="{{ url('public/assets/img/gallery/socialEvents3.png') }}" alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="#"><h4>Help for Children</h4></a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-sort-amount-down"></i>18.01.2021</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+            </div>
+            <div class="row justify-content-center">
+                <a stye="color:white" href="{{ route('event') }}" class="btn btn-primary" >All</a>
             </div>
         </div>
     </section>
+    @endif
     <!-- Featured_job_end -->
     <!--? Team Ara Start -->
-    <div class="team-area pt-160 pb-160">
+    <div class="team-area pt-180 pb-160">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
@@ -448,7 +384,7 @@
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-3 col-md-4">
-                        <a href="#" class="btn white-btn f-right sm-left">{{ __('welcome.appeal_button') }}</a>
+                        <a href="{{ route('register') }}" class="btn white-btn f-right sm-left">{{ __('welcome.appeal_button') }}</a>
                     </div>
                 </div>
             </div>
