@@ -1,4 +1,11 @@
 @extends('layouts.index');
+@section('css')
+<style>
+    .cat-cap h5{
+        font-size: 26px;
+    }
+</style>
+@endsection
 @section('content')
 
     <main>
