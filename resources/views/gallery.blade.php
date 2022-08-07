@@ -37,7 +37,7 @@
                             </ul> -->
                         </div>
                         <div class="team-caption">
-                            <h3><a href="instructor.html">{{ GoogleTranslate::trans($g->name, session()->get('lang_code'), 'en'); }}</a></h3>
+                            <h3><a>{{ GoogleTranslate::trans($g->name, session()->get('lang_code'), 'en'); }}</a></h3>
                             <!-- <p>Volunteer leader</p> -->
                         </div>
                     </div>
