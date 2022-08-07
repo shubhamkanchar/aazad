@@ -69,7 +69,7 @@
                             <span class="flaticon-null-1"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.education') }}</a></h5>
+                            <h5>{{ __('welcome.education') }}</h5>
                             <p>{{ __('welcome.education_desc') }}</p>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                             <span class="flaticon-think"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.health') }}</a></h5>
+                            <h5>{{ __('welcome.health') }}</h5>
                             <p>{{ __('welcome.health_desc') }}</p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                             <span class="flaticon-gear"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.agri') }}</a></h5>
+                            <h5>{{ __('welcome.agri') }}</h5>
                             <p>{{ __('welcome.agri_desc') }}</p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <span class="flaticon-null-1"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.science') }}</a></h5>
+                            <h5>{{ __('welcome.science') }}</h5>
                             <p>{{ __('welcome.science_desc') }}</p>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                             <span class="flaticon-think"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.industry') }}</a></h5>
+                            <h5>{{ __('welcome.industry') }}</h5>
                             <p>{{ __('welcome.industry_desc') }}</p>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                             <span class="flaticon-gear"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.literature') }}</a></h5>
+                            <h5>{{ __('welcome.literature') }}</h5>
                             <p>{{ __('welcome.literature_desc') }}</p>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                             <span class="flaticon-null-1"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.culture') }}</a></h5>
+                            <h5>{{ __('welcome.culture') }}</h5>
                             <p>{{ __('welcome.culture_desc') }}</p>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                             <span class="flaticon-think"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.cleanliness') }}</a></h5>
+                            <h5>{{ __('welcome.cleanliness') }}</h5>
                             <p>{{ __('welcome.cleanliness_desc') }}</p>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                             <span class="flaticon-gear"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.enviroment') }}</a></h5>
+                            <h5>{{ __('welcome.enviroment') }}</h5>
                             <p>{{ __('welcome.enviroment_desc') }}</p>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                             <span class="flaticon-gear"></span>
                         </div>
                         <div class="cat-cap">
-                            <h5><a href="services.html">{{ __('welcome.sports') }}</a></h5>
+                            <h5>{{ __('welcome.sports') }}</h5>
                             <p>{{ __('welcome.sports_desc') }}</p>
                         </div>
                     </div>
