@@ -13,7 +13,7 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
                 @csrf()
                 <input type="hidden" name="id" id="id" value="{{ $data['id'] ?? ''}}">
                 <div class="form-group row">
-                    <label for="file">Event Image</label>
+                    <label for="file">Donation Image</label>
                     <input class="form-control @error('file')  is-invalid @enderror" type="file" name="file" id="file" value="{{ $data['file'] ?? ''}}">
                     @error('file')
                     <span class="is-invalid">{{ $message }}</span>
@@ -23,13 +23,6 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
                     <label for="name">{{ GoogleTranslate::trans('Donation Title', session()->get('lang_code'), 'en'); }}</label>
                     <input class="form-control @error('name')  is-invalid @enderror" type="text" name="name" id="name" value="{{ $data['name'] ?? ''}}">
                     @error('name')
-                    <span class="is-invalid">{{ GoogleTranslate::trans($message, session()->get('lang_code'), 'en'); }}</span>
-                    @enderror
-                </div>
-                <div class="form-group row">
-                    <label for="name_mr">{{ GoogleTranslate::trans('Donation Title Marathi', session()->get('lang_code'), 'en') }}</label>
-                    <input class="form-control @error('name_mr')  is-invalid @enderror" type="text" name="name_mr" id="name_mr" value="{{ $data['name_mr'] ?? ''}}">
-                    @error('name_mr')
                     <span class="is-invalid">{{ GoogleTranslate::trans($message, session()->get('lang_code'), 'en'); }}</span>
                     @enderror
                 </div>

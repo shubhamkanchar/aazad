@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class gallery extends Model
+class GalleryImages extends Model
 {
     use HasFactory;
 
-    protected $table = 'gallery';
+    protected $table = 'image';
     protected $connection = 'mysql';
 
     protected $fillable = [
-        'file',
+        'gallery_id',
+        'name',
     ];
 
     public $timestamps = true;

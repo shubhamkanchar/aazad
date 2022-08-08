@@ -26,6 +26,7 @@
                                         </li>
                                         <li><a href="#">{{__('welcome.phone')}} : {{__('welcome.phone1')}}</a></li>
                                         <li><a href="#">{{__('welcome.email')}} : azadfoundation2022@gmail.com</a></li>
+                                        <li><a href="#">{{__('welcome.reg')}} : MH/803/2022 </a></li>
                                     </ul>
                                 </div>
 

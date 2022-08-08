@@ -12,7 +12,7 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
         <!-- <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div> -->
-        <div class="sidebar-brand-text mx-3">{{ GoogleTranslate::trans(config( 'app.name' ,'aazad'), session()->get('lang_code'), 'en'); }}</div>
+        <div class="sidebar-brand-text mx-3">{{ GoogleTranslate::trans(config( 'app.name' ,'Azad'), session()->get('lang_code'), 'en'); }}</div>
     </a>
 
     <!-- Divider -->
@@ -55,13 +55,28 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>{{ GoogleTranslate::trans('Event', session()->get('lang_code'), 'en'); }}</span>
+            <span>{{ GoogleTranslate::trans('Social Event', session()->get('lang_code'), 'en'); }}</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <!-- <h6 class="collapse-header">Add cources</h6> -->
-                <a class="collapse-item" href="{{ route('admin.add_event') }}">{{ GoogleTranslate::trans('Add Event', session()->get('lang_code'), 'en'); }}</a>
-                <a class="collapse-item" href="{{ route('admin.event_list') }}">{{ GoogleTranslate::trans('Manage Event', session()->get('lang_code'), 'en'); }}</a>
+                <a class="collapse-item" href="{{ route('admin.add_event') }}">{{ GoogleTranslate::trans('Add Social Event', session()->get('lang_code'), 'en'); }}</a>
+                <a class="collapse-item" href="{{ route('admin.event_list') }}">{{ GoogleTranslate::trans('Manage Social Event', session()->get('lang_code'), 'en'); }}</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefour"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>{{ GoogleTranslate::trans('Latest Works', session()->get('lang_code'), 'en'); }}</span>
+        </a>
+        <div id="collapsefour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <!-- <h6 class="collapse-header">Add cources</h6> -->
+                <a class="collapse-item" href="{{ route('admin.add_work') }}">{{ GoogleTranslate::trans('Add Latest Works', session()->get('lang_code'), 'en'); }}</a>
+                <a class="collapse-item" href="{{ route('admin.work_list') }}">{{ GoogleTranslate::trans('Manage Latest Works', session()->get('lang_code'), 'en'); }}</a>
             </div>
         </div>
     </li>

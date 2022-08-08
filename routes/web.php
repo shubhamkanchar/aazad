@@ -20,6 +20,7 @@ Route::middleware(['language'])->group(function(){
     Route::get('/about', [welcome::class, 'about'])->name('about');
     Route::get('/event', [welcome::class, 'event'])->name('event');
     Route::get('/works', [welcome::class, 'works'])->name('works');
+    Route::get('/donation', [welcome::class, 'donation'])->name('donation');
     Route::get('/contact', [welcome::class, 'contact'])->name('contact');
     Route::get('/gallery', [welcome::class, 'gallery'])->name('gallery');
     Route::post('/request_mail', [welcome::class, 'mail'])->name('request_mail');
@@ -57,6 +58,13 @@ Route::middleware(['auth', 'user-access:admin','verified'])->prefix('admin')->na
     Route::get('/event/update/{id}', [AdminController::class, 'update_event'])->name('update_event');
     Route::get('/event/list', [AdminController::class, 'event_list'])->name('event_list');
     Route::get('/event/delete/{id}', [AdminController::class, 'event_delete'])->name('event_delete');
+
+    Route::get('/work/add', [AdminController::class, 'add_work'])->name('add_work');
+    Route::any('/work/create', [AdminController::class, 'create_work'])->name('create_work');
+    Route::get('/work/update/{id}', [AdminController::class, 'update_work'])->name('update_work');
+    Route::get('/work/list', [AdminController::class, 'work_list'])->name('work_list');
+    Route::get('/work/delete/{id}', [AdminController::class, 'work_delete'])->name('work_delete');
+
 
     Route::get('/gallery/add', [AdminController::class, 'add_gallery'])->name('add_gallery');
     Route::any('/gallery/create', [AdminController::class, 'create_gallery'])->name('create_gallery');

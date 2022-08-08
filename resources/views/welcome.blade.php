@@ -1,4 +1,4 @@
-@extends('layouts.index');
+@extends('layouts.index')
 @section('css')
 <style>
     .cat-cap h5{
@@ -13,7 +13,7 @@
     <div class="slider-area">
         <div class="slider-active">
             <!-- Single Slider -->
-            <div class="single-slider slider-height d-flex align-items-center" style="height:100%">
+            <div class="single-slider slider-height d-flex align-items-center" style="height:750px">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
@@ -362,7 +362,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="{{ url('public/team/team2.jpg') }}" alt="">
+                            <img src="{{ url('public/team/team3.jpeg') }}" alt="">
                             <!-- Blog Social -->
                             <!-- <ul class="team-social">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

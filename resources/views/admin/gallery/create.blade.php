@@ -9,24 +9,11 @@
             <form action="{{ route('admin.create_gallery') }}" method="post" id="Addgallery" enctype='multipart/form-data'>
                 @csrf()
                 <input type="hidden" name="id" id="id" value="{{ $data['id'] ?? ''}}">
-                <div class="form-group row">
-                    <label for="name">gallery Title</label>
-                    <input class="form-control @error('name')  is-invalid @enderror" type="text" name="name" id="name" value="{{ $data['name'] ?? ''}}">
-                    @error('name')
-                    <span class="is-invalid">{{ $message }}</span>
-                    @enderror
-                </div>
+        
                 <div class="form-group row">
                     <label for="name">gallery image</label>
-                    <input class="form-control @error('file')  is-invalid @enderror" type="file" name="file" id="file" value="{{ $data['file'] ?? ''}}">
+                    <input class="form-control @error('file')  is-invalid @enderror" type="file" name="file[]" id="file" value="{{ $data['file'] ?? ''}}" multiple>
                     @error('file')
-                    <span class="is-invalid">{{ $message }}</span>
-                    @enderror
-                </div>
-                <div class="form-group row">
-                    <label for="description">Event Description</label>
-                    <textarea class="form-control  @error('description')  is-invalid @enderror" name="description" id="description">{{ $data['description'] ?? ''}}</textarea>
-                    @error('description')
                     <span class="is-invalid">{{ $message }}</span>
                     @enderror
                 </div>

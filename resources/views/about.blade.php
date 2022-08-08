@@ -1,4 +1,4 @@
-@extends('layouts.index');
+@extends('layouts.index')
 @section('content')
 
     <main>
@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 pt-20 text-center">
-                            <h2>{{__('welcome.about')}}</h2>
+                            <h2>{{__('welcome.about_our_foundation')}}</h2>
                             <p></p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
     <!-- About Law End-->
     
     <!--? Team Ara Start -->
-    <div class="team-area pb-100">
+    <div class="team-area pt-180 pb-160">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
@@ -98,7 +98,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="{{ url('public/team/team2.jpg') }}" alt="">
+                            <img src="{{ url('public/team/team3.jpeg') }}" alt="">
                             <!-- Blog Social -->
                             <!-- <ul class="team-social">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

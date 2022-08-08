@@ -9,6 +9,7 @@ use App\Models\gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\request as ModelsRequest;
+use App\Models\work;
 use Illuminate\Support\Facades\Mail;
 
 class welcome extends Controller
@@ -39,8 +40,15 @@ class welcome extends Controller
     public function works(Request $request)
     {
 
-        $works = donation::orderBy('created_at','desc')->paginate(10);
+        $works = work::orderBy('created_at','desc')->paginate(10);
         return view('works',['works'=>$works]);
+    }
+
+    public function donation(Request $request)
+    {
+
+        $donation = donation::orderBy('created_at','desc')->paginate(10);
+        return view('donation',['donation'=>$donation]);
     }
 
     public function gallery(Request $request)

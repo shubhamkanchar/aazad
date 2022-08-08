@@ -10,16 +10,20 @@
                 <thead>
                     <tr>
                         <th>Image</th>
+                        <th>Work Name</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($data as $d)
                     <tr>
-                        <td><img style="height:50px;width:50px"src="{{ url('public/uploads/gallery').'/'.$d->file }}"></td>
+                        <td><img style="height:50px;width:50px"src="{{ url('public/uploads/work').'/'.$d->file }}"></td>
+                        <td>{{ $d->name }}</td>
+                        <td>{{ $d->description }}</td>
                         <td>
-                            <!-- <a href="{{ route('admin.update_gallery',['id'=>$d->id]) }}" class="btn btn-primary" >Edit</a> -->
-                            <a href="{{ route('admin.gallery_delete',['id'=>$d->id]) }}" class="btn btn-danger" >Delete</a>
+                            <a href="{{ route('admin.update_work',['id'=>$d->id]) }}" class="btn btn-primary" >Edit</a>
+                            <a href="{{ route('admin.work_delete',['id'=>$d->id]) }}" class="btn btn-danger" >Delete</a>
                         </td>
                     </tr>
                     @endforeach
@@ -27,6 +31,8 @@
                 <tfoot>
                     <tr>
                         <th>Image</th>
+                        <th>Work Name</th>
+                        <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>

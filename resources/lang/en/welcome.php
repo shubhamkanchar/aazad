@@ -7,7 +7,8 @@ return [
     'contact'=>'Contact',
     'gallery'=>'Gallery',
     'donate'=>'Donate',
-    'aazad'=>'Aazad Foundation',
+    'donation'=>'Donation',
+    'aazad'=>'Azad Foundation',
     'subscribe'=>'Subscribe Now',
     'phone'=>'Phone',
     'email'=>'Email',
@@ -39,7 +40,7 @@ return [
     'sports_desc'=>'To create interest in various types of sports and exercise among the youth.',
     'literature_desc'=>'Literature',
 
-    'about_our_foundation'=>'About our foundation',
+    'about_our_foundation'=>'About Azad Group managed by Azad Foundation',
     'slogan'=>"People's welfare is our goal and purpose. Join our organization and become a partner in public welfare.",
     'address'=>'Address',
     'line1'=>'Sr. No. 40, Plot no 2, Limbjai vasti',
@@ -51,8 +52,8 @@ return [
     'newsletter'=>'Newsletter',
     'newsletter_msg'=>'Subscribe us to get every update.',
     
-    'about_line1'=>'Azad Foundation was established in 2022. The main objective of the organization is public welfare',
-    'about_line2'=>'Azad Foundation is not a political organization but its establishment has been done for people\'s interest and public welfare',
+    'about_line1'=>'Azad Group managed by Azad Foundation was established in 2022. The main objective of the organization is public welfare',
+    'about_line2'=>'Azad group is not a political organization but its establishment has been done for people\'s interest and public welfare',
     'about_line3'=>'To spread and promote education Kindergarten, Primary, Secondary, High Secondary, CBSE Pattern, English and Marathi College, d.ed, b.ed, Night School and College Engineering, Degree, Degree Studies, Medical College, Para Medical, Medical Curriculum, Management Starting Science Courses, Disseminating and Propaganda Literacy Campaign',
     'about_line4'=>'',
     'about_line5'=>'',
@@ -65,14 +66,18 @@ return [
     'team_heading'=>'Meet our team',
     'member1'=>'Mr. Bhimashankar Kapse',
     'designation1'=>'President of Azad Group Maharashtra',
-    'member2'=>'Mr. Pramod Tale',
+    'member2'=>'Mr. Pramod Tale Patil',
     'designation2'=>'Vice President Azad Group Maharashtra',
 
+    'work_small'=>'Our works You Can See',
+    'work_large'=>'Explore Our Latest Causes That We Works',
+
     'donation_small'=>'Our works You Can See',
-    'donation_large'=>'Explore Our Latest Causes That We Works',
+    'donation_large'=>'Cuases for which we are rasing fund',
 
     'event_small'=>'What We Are Doing',
     'event_large'=>'We Arrange Many Social Events For  Donations',
 
+    'reg'=>'Registration Number',
 ];
 ?>

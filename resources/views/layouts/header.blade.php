@@ -26,7 +26,7 @@
                                     <div class="header-social">    
                                         <ul>
                                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a  href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a  href="#"><i class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                             <li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                                         </ul>
@@ -69,10 +69,14 @@
                                                 <li><a href="{{ route('welcome') }}">{{__('welcome.home')}}</a></li>
                                                 <li><a href="{{ route('about') }}">{{__('welcome.about')}}</a></li>
                                                 @php
-                                                $works = App\Models\donation::count();
+                                                $works = App\Models\work::count();
+                                                $donation = App\Models\donation::count();
                                                 $event = App\Models\event::count();
                                                 $gallery = App\Models\gallery::count();
                                                 @endphp
+                                                @if($donation > 0)
+                                                <li><a href="{{ route('donation') }}">{{__('welcome.donation')}}</a></li>
+                                                @endif
                                                 @if($works > 0)
                                                 <li><a href="{{ route('works') }}">{{__('welcome.latest_works')}}</a></li>
                                                 @endif 

@@ -1,4 +1,4 @@
-@extends('layouts.index');
+@extends('layouts.index')
 @section('content')
 
     <main>
@@ -10,7 +10,7 @@
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 pt-20 text-center">
                             <h2>{{__('welcome.latest_works')}}</h2></br>
-                            <h2>{{ __('welcome.donation_large') }}</h2>
+                            <h2>{{ __('welcome.work_large') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -22,38 +22,18 @@
     use Stichoza\GoogleTranslate\GoogleTranslate;
     @endphp
     @if($works)
-    
     <div class="our-cases-area section-padding2">
         <div class="container">
             <div class="row">
                 @foreach($works as $work)
-                <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="single-cases mb-40">
-                        <div class="cases-img" style="width: 100%;height: 250px;">
-                            <img src="{{ url('public/uploads/donation').'/'.$work->file }}" alt="">
+                        <div class="cases-img" style="width: 100%;height: 500px;">
+                            <img src="{{ url('public/uploads/work').'/'.$work->file }}" alt="">
                         </div>
                         <div class="cases-caption" >
-                            <h3><a href="#">{{ GoogleTranslate::trans($work->name, session()->get('lang_code'), 'en'); }}</a></h3>
-                            <!-- Progress Bar -->
-                            @php
-                            $percentage=(20000/$work->goal)*100;
-                            @endphp
-                            <div class="single-skill mb-15">
-                                <div class="bar-progress">
-                                    <div id="bar1" class="barfiller">
-                                        <div class="tipWrap">
-                                            <span class="tip"></span>
-                                        </div>
-                                        <span class="fill" data-percentage="{{ $percentage }}"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- / progress -->
-                            
-                            <div class="prices d-flex justify-content-between">
-                                <p>Raised:<span> ₹20,000</span></p>
-                                <p>Goal:<span> ₹{{ $work->goal }}</span></p>
-                            </div>
+                            <h2>{{ GoogleTranslate::trans($work->name, session()->get('lang_code'), 'en') }}</h2>
+                            <p>{{ GoogleTranslate::trans($work->description, session()->get('lang_code'), 'en') }}</p>
                         </div>
                     </div>
                 </div>
