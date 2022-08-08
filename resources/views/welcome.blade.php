@@ -266,7 +266,7 @@
                 @endforeach
             </div>
             <div class="row justify-content-center">
-                <a stye="color:white" href="{{ route('works') }}" class="btn btn-primary" >All</a>
+                <a stye="color:white" href="{{ route('donation') }}" class="btn btn-primary" >All</a>
             </div>
         </div>
     </div>
